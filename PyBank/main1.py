@@ -76,7 +76,13 @@ with open(csvpath) as csvfile:
     print("Greatest Increase in Profits: " + greatestmonth + ", $" + str(highest))
     print("Greatest Decrease in Profits: " + leastmonth + ", $" + str(lowest))
    
-   
-    #with open(file_to_output, "w") as txt_file:
-        #txt_file.write(output)
-
+    txt_file= open("analysis.txt", "w")
+    txt_file.write("Financial Analysis\n")
+    txt_file.write("----------------------------\n")
+    txt_file.write("Total Months:" + str(number_of_months)+ "\n")      
+    txt_file.write("Total: $" + str(totalrevenue)+ "\n")
+    txt_file.write("Average Change: $" + str(average)+ "\n")
+    txt_file.write("Greatest Increase in Profits: " + greatestmonth + ", $" + str(highest)+ "\n")
+    txt_file.write("Greatest Decrease in Profits: " + leastmonth + ", $" + str(lowest)+ "\n")
+        
+       
