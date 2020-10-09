@@ -30,9 +30,11 @@ with open(csvpath) as csvfile:
             # track that candidate's voter count
             vote_counter[candidates] = 0
             
-            # Then add a vote to that candidate's count
-            vote_counter[candidates] = vote_counter[candidates] + 1
-
+        # Then add a vote to that candidate's count
+        vote_counter[candidates] = vote_counter[candidates] + 1
+print("Election Results")
+print("----------------")
+print("Total Votes: "+ str(votes))
 
 
 
@@ -41,19 +43,14 @@ with open(csvpath) as csvfile:
 most_votes=0
 percent=[]
 for i in candidate_votes:
-      perc=round(vote_counter.get(i)/votes*100, 2)
-      percent.append(perc)
-      if vote_counter.get(i) > most_votes:
-       most_votes=vote_counter.get(i)
-       winner=i   
-
-
-
-print("Election Results")
-print("----------------")
-print("Total Votes: "+ str(votes))
-for i in range(len(candidate_votes)):
-    print(f"{candidate_vote[i]}: {percent[i]}% {vote_counter.get(i)}")
+    votecount=vote_counter.get(i)
+    perc=round(float(votecount)/float(votes)*100,2)
+    percent.append(perc)
+    if vote_counter.get(i) > most_votes:
+        most_votes=vote_counter.get(i)
+        winner=i   
+    #print(f"{i}: {perc}% ({votecount})")
+    print(i+ "%"+ str(perc) +vote_counter.get(i))
 print("----------------")
 print("winner: "+ winner)
 print("-----------------")
