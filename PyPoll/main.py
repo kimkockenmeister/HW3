@@ -50,7 +50,16 @@ for i in candidate_votes:
         most_votes=vote_counter.get(i)
         winner=i   
     #print(f"{i}: {perc}% ({votecount})")
-    print(i+ "%"+ str(perc) +vote_counter.get(i))
+    #print(i+ "%"+ str(perc) +vote_counter.get(i))
 print("----------------")
 print("winner: "+ winner)
 print("-----------------")
+
+txt_file= open("analysis.txt", "w")
+txt_file.write("Election Results\n")
+txt_file.write("Election Results")
+txt_file.write("----------------")
+txt_file.write("Total Votes: "+ str(votes))
+txt_file.write("----------------")
+txt_file.write("winner: "+ winner)
+txt_file.write("-----------------")
