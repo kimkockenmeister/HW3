@@ -60,10 +60,10 @@ print("-----------------")
 
 txt_file= open("analysis.txt", "w")
 txt_file.write("Election Results\n")
-txt_file.write("Election Results\n")
 txt_file.write("----------------\n")
 txt_file.write("Total Votes: "+ str(votes)+"\n")
-txt_file.write(f"{i}: {perc}% ({vote_counter[i]})")
+for i in candidate_votes:
+    txt_file.write(f"{i}: {perc}% ({vote_counter[i]})" + "\n")
 txt_file.write("----------------" + "\n")
 txt_file.write("winner: "+ winner+"\n")
 txt_file.write("-----------------"+ "\n")
