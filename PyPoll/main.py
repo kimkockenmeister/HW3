@@ -49,17 +49,21 @@ for i in candidate_votes:
     if vote_counter.get(i) > most_votes:
         most_votes=vote_counter.get(i)
         winner=i   
-    #print(f"{i}: {perc}% ({votecount})")
+    #print(f" {i} {perc} {votecount} ")
+    print(f"{i}: {perc}% ({vote_counter[i]})")
     #print(i+ "%"+ str(perc) +vote_counter.get(i))
+    
+   # print(f"hello world")
 print("----------------")
 print("winner: "+ winner)
 print("-----------------")
 
 txt_file= open("analysis.txt", "w")
 txt_file.write("Election Results\n")
-txt_file.write("Election Results")
-txt_file.write("----------------")
-txt_file.write("Total Votes: "+ str(votes))
-txt_file.write("----------------")
-txt_file.write("winner: "+ winner)
-txt_file.write("-----------------")
+txt_file.write("Election Results\n")
+txt_file.write("----------------\n")
+txt_file.write("Total Votes: "+ str(votes)+"\n")
+txt_file.write(f"{i}: {perc}% ({vote_counter[i]})")
+txt_file.write("----------------" + "\n")
+txt_file.write("winner: "+ winner+"\n")
+txt_file.write("-----------------"+ "\n")
